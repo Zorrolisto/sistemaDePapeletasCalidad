@@ -1,0 +1,16 @@
+<button mat-icon-button class="close-button">
+    <mat-icon class="close-icon" color="warn" (click)="onNoClick()">close</mat-icon>
+</button>
+<div class="row">
+    <button class="m-auto" mat-raised-button color="primary" type="button" (click)="buscarPersonaOEmpresa(false)">Empresa</button>
+    <button class="m-auto" mat-raised-button color="primary" type="button" (click)="buscarPersonaOEmpresa(true)">Persona</button>
+</div>
+<div mat-dialog-content>
+    <div *ngIf="EmpresaOPersona">
+        <app-list-persona></app-list-persona>
+    </div>
+    <div *ngIf="!EmpresaOPersona">
+        <app-list-empresa></app-list-empresa>
+    </div>
+</div>
+  

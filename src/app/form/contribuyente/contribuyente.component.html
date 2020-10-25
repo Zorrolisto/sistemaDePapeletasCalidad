@@ -1,0 +1,22 @@
+
+<div class="card mx-auto p-3 mat-elevation-z8">
+    <div class="text-align-center text-center">
+        <h1>Infractor</h1>
+    </div>
+    
+    <!--Abrir Dialog-->
+    <div class="">
+        <button mat-raised-button (click)="openDialogInfractor()" color="primary" style="float: left;" type="button">
+            <a>Escoger Contribuyente</a>
+        </button>
+    </div>
+    <!--Termina abrir Dialog-->
+
+    <!--Mostrar Datos Contribuyente-->
+    <app-mostrar-datos-contribuyente 
+        (propagar3)="syncLicencia123($event)" 
+        [infractor]="infractor" 
+        [licencia]="licencia">
+    </app-mostrar-datos-contribuyente>
+    <!--Termina Mostrar Datos Contribuyente-->
+</div>

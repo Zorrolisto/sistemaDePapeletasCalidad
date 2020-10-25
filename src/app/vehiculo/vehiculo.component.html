@@ -1,0 +1,18 @@
+
+<div class="card mx-auto p-3 mat-elevation-z8">
+    <div class="text-align-center text-center">
+        <h1>Vehiculo</h1>
+    </div>
+    
+    <!--Abrir Dialog-->
+    <div class="">
+        <button mat-raised-button (click)="openDialogVehiculo()" color="primary" style="float: left;" type="button">
+            <a>Escoger Vehiculo</a>
+        </button>
+    </div>
+    <!--Termina abrir Dialog-->
+
+    <!--Mostrar Datos Contribuyente-->
+    <app-mostrar-datos-vehiculo [vehiculo]="vehiculo"></app-mostrar-datos-vehiculo>
+    <!--Termina Mostrar Datos Contribuyente-->
+</div>

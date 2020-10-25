@@ -1,0 +1,39 @@
+
+    <!--Mostrar Persona Elegida-->
+    <div *ngIf="infractor!=null" class="row">
+        <div class="col-lg-3  m-auto">
+            <h3><strong>Codigo:</strong> {{infractor.id}}</h3>
+        </div>
+        <div *ngIf="isPersona(infractor)"  class="col-lg-3  m-auto">
+            <h3><strong>DNI:</strong> {{infractor.dni}}</h3>
+        </div>
+        <div *ngIf="!isPersona(infractor)"  class="col-lg-3  m-auto">
+            <h3><strong>RUC:</strong> {{infractor.ruc}}</h3>
+        </div>
+        <mat-form-field  class="col-lg-3 m-auto" appearance="fill">
+        <mat-label>Licencia</mat-label>
+            <input matInput type="number" [(ngModel)]="licencia" name="licencia" 
+            (ngModelChange)="syncLicencia()" required
+            [formControl]="licenciaFormControl" [errorStateMatcher]="matcher">
+            <mat-error *ngIf="licenciaFormControl.hasError('required')">
+              Licencia <strong>requerida*</strong>
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <!--Termina Mostrar Persona Elegida-->
+    <hr>
+    <!--Mostrar Empresa Elegida-->
+    <div *ngIf="infractor!=null && isPersona(infractor)" class="row">
+        <div class="col-lg-3  m-auto">
+        <h3><strong>Nombres:</strong> {{infractor.nombres}}</h3>
+        </div>
+        <div class="col-lg-3  m-auto">
+        <h3><strong>Apellidos :</strong> {{infractor.apellidos}}</h3>
+        </div>
+    </div>
+    <div *ngIf="infractor!=null && !isPersona(infractor)" class="row">
+        <div class="col-lg-3  m-auto">
+        <h3><strong>Razon Social:</strong> {{infractor.razonSocial}}</h3>
+        </div>
+    </div>
+    <!--Termina Mostrar Empresa Elegida-->

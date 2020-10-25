@@ -1,0 +1,30 @@
+
+    <!--Mostrar Persona Elegida-->
+    <div *ngIf="propietario!=null" class="row">
+        <div class="col-lg-3  m-auto">
+            <h3><strong>Codigo:</strong> {{propietario.id}}</h3>
+        </div>
+        <div *ngIf="isPersona(propietario)"  class="col-lg-3  m-auto">
+            <h3><strong>DNI:</strong> {{propietario.dni}}</h3>
+        </div>
+        <div *ngIf="!isPersona(propietario)"  class="col-lg-3  m-auto">
+            <h3><strong>RUC:</strong> {{propietario.ruc}}</h3>
+        </div>
+    </div>
+    <!--Termina Mostrar Persona Elegida-->
+    <hr>
+    <!--Mostrar Empresa Elegida-->
+    <div *ngIf="propietario!=null && isPersona(propietario)" class="row">
+        <div class="col-lg-3  m-auto">
+        <h3><strong>Nombres:</strong> {{propietario.nombres}}</h3>
+        </div>
+        <div class="col-lg-3  m-auto">
+        <h3><strong>Apellidos :</strong> {{propietario.apellidos}}</h3>
+        </div>
+    </div>
+    <div *ngIf="propietario!=null && !isPersona(propietario)" class="row">
+        <div class="col-lg-3  m-auto">
+        <h3><strong>Razon Social:</strong> {{propietario.razonSocial}}</h3>
+        </div>
+    </div>
+    <!--Termina Mostrar Empresa Elegida-->

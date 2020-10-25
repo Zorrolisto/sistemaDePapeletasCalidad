@@ -1,0 +1,18 @@
+
+<div class="card mx-auto p-3 mat-elevation-z8">
+    <div class="text-align-center text-center">
+        <h1>Infraccion</h1>
+    </div>
+    
+    <!--Abrir Dialog-->
+    <div class="">
+        <button mat-raised-button (click)="openDialogInfraccion()" color="primary" style="float: left;" type="button">
+            <a>Escoger Infraccion</a>
+        </button>
+    </div>
+    <!--Termina abrir Dialog-->
+
+    <!--Mostrar Datos Contribuyente-->
+    <app-mostrar-datos-infraccion [infraccion]="infraccion"></app-mostrar-datos-infraccion>
+    <!--Termina Mostrar Datos Contribuyente-->
+</div>

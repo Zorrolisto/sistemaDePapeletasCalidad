@@ -1,0 +1,25 @@
+
+    <!--Mostrar Persona Elegida-->
+    <div *ngIf="infraccion!=null" class="row">
+        <div class="col-lg-3  m-auto">
+            <h3><strong>id:</strong> {{infraccion.id}}</h3>
+        </div>
+        <div class="col-lg-3  m-auto">
+            <h3><strong>Codigo:</strong> {{infraccion.codigo}}</h3>
+        </div>
+        <div class="col-lg-3  m-auto">
+            <h3><strong>Agente:</strong> {{infraccion.agente}}</h3>
+        </div>
+        <div class="col-lg-3  m-auto">
+            <h3><strong>Porcentaje uit:</strong> {{infraccion.porcentaje_uit}}</h3>
+        </div>
+    </div>
+    <!--Termina Mostrar Persona Elegida-->
+    <hr>
+    <!--Mostrar Empresa Elegida-->
+    <div *ngIf="infraccion!=null" class="row">
+        <div class="col-lg-12 text-center">
+        <h3><strong>Descripcion:</strong> {{infraccion.descripcion}}</h3>
+        </div> 
+    </div>
+    <!--Termina Mostrar Empresa Elegida-->

@@ -1,0 +1,42 @@
+<div class="card mat-elevation-z8">
+    <div class="card-body">
+        <div class="text-align-center text-center">
+            <h1>Informacion</h1>
+        </div>
+          <mat-form-field class="col-sm-6 m-0" appearance="fill">
+              <mat-label>Escoge una fecha</mat-label>
+              <input matInput [matDatepicker]="picker456" 
+                [(ngModel)]="papeleta.fechaImposicion" 
+                [formControl]="fechaImposicionFormControl">
+              <mat-datepicker-toggle matSuffix [for]="picker456"></mat-datepicker-toggle>
+              <mat-datepicker #picker456></mat-datepicker>
+              <mat-error *ngIf="fechaImposicionFormControl.hasError('required')">
+                Fecha <strong>requerida*</strong>
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-sm-6 m-0" appearance="fill">
+              <mat-label>Hora de imposicion</mat-label>
+              <input matInput type="time" [(ngModel)]="papeleta.hora" placeholder="00:00" name="hora" required
+              [formControl]="horaFormControl">
+              <mat-error *ngIf="horaFormControl.hasError('required')">
+                Hora <strong>requerida*</strong>
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-lg-12 m-0" appearance="fill">
+            <mat-label>Lugar</mat-label>
+            <input matInput [(ngModel)]="papeleta.lugar" placeholder="Ej. Jiron 5 de la Calle 12 " name="lugar" required
+            [formControl]="lugarFormControl">
+            <mat-error *ngIf="lugarFormControl.hasError('required')">
+              Lugar <strong>requerido*</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-lg-12" appearance="fill">
+            <mat-label>Observaciones</mat-label>
+            <input matInput [(ngModel)]="papeleta.observacion" placeholder="Ej. Se mostró agresivo el infractor" name="observacion" required
+            [formControl]="observacionesFormControl">
+            <mat-error *ngIf="observacionesFormControl.hasError('required')">
+              Observaciones <strong>requerida*</strong>
+            </mat-error>
+          </mat-form-field>
+    </div>
+</div>

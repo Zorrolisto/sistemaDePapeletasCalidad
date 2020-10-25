@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-lg-10" >
+      <h1 style="color:White; font-size:17px">Buscar por ...</h1>
+    </div>
+    <div class="col-lg-2">
+      <button mat-raised-button color="primary" *ngIf="!busqueda" style="position:relative;float:right;" type="button" (click)="iniciarBusqueda()">Iniciar Busqueda</button>
+    </div>
+</div>
+<div class="row" *ngIf="busqueda">
+    <div class="col-lg-3 m-auto">
+        <mat-form-field  class="col-lg-12" appearance="outline">
+            <mat-label for="id" class="col-form-label ">ID</mat-label>
+            <input matInput type="number" [(ngModel)]="vehiculoBuscar.id"  name="id">
+        </mat-form-field>
+    </div>
+    <div class="col-lg-3 m-auto">
+        <mat-form-field  class="col-lg-12" appearance="outline">
+            <mat-label for="placa" class="col-form-label ">Placa</mat-label>
+            <input matInput type="text" [(ngModel)]="vehiculoBuscar.placa"  name="placa">
+        </mat-form-field>
+    </div>
+    <div class="col-lg-3 m-auto">
+        <mat-form-field  class="col-lg-12" appearance="outline">
+            <mat-label for="clase" class="col-form-label ">Calificacion</mat-label>
+            <input matInput type="text" name="clase" [(ngModel)]="vehiculoBuscar.clase">
+        </mat-form-field>
+    </div>
+</div>
+<hr *ngIf="busqueda">
+<div class="row" *ngIf="busqueda">
+    <div class="col-lg-3 m-auto">
+        <mat-form-field  class="col-lg-12" appearance="outline">
+            <mat-label for="color" class="col-form-label ">Color</mat-label>
+            <input matInput type="text" name="color" [(ngModel)]="vehiculoBuscar.color">
+        </mat-form-field>
+    </div>
+    <div class="col-lg-3 m-auto">
+        <mat-form-field  class="col-lg-12" appearance="outline">
+            <mat-label for="marca" class="col-form-label ">Marca</mat-label>
+            <input matInput type="text" name="marca" [(ngModel)]="vehiculoBuscar.marca">
+        </mat-form-field>
+    </div>
+</div>
+<div class="row" *ngIf="busqueda">
+    <div class="pt-1 m-auto">
+        <button mat-raised-button color="primary" (click)="cerrarBusqueda()">Cerrar</button>
+    </div>
+    <div class="pt-1 m-auto">
+        <button mat-raised-button color="primary" (click)="limpiarBusqueda()">Limpiar</button>
+    </div>
+    <div class="pt-1 m-auto">
+        <button mat-raised-button color="primary" (click)="Buscar()">Buscar</button>
+    </div>
+</div>
