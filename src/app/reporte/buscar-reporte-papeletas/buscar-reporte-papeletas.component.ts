@@ -57,12 +57,12 @@ export class BuscarReportePapeletasComponent implements OnInit {
     let fechaABuscar = this.fechaRegistro ? this.fechaRegistro.toString() : null;
     
     if(this.opcionFecha=='1'){
-      fechaABuscar = this.year+'-'+this.mes+'-01'
-      this.equal = this.year+'-'+this.mes+'-30'
+      fechaABuscar = this.anio+'-'+this.mes+'-01'
+      this.equal = this.anio+'-'+this.mes+'-31'
     }
     if(this.opcionFecha=='2'){
-      fechaABuscar = this.year+'-01-01'
-      this.equal = this.year+'-12-31'
+      fechaABuscar = this.anio+'-01-01'
+      this.equal = this.anio+'-12-31'
     } 
     let list  = [
       dni,

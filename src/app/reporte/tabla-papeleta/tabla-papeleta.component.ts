@@ -11,7 +11,7 @@ import { PapeletaService } from 'src/app/services/papeletaService/papeleta.servi
   styleUrls: ['./tabla-papeleta.component.css']
 })
 export class TablaPapeletaComponent implements  AfterViewInit, OnInit, OnChanges {
-  displayedColumns: string[] = ['docInfractor','docPropietario',
+  displayedColumns: string[] = ['id', 'docInfractor','docPropietario',
   'placa', 'codigoInfraccion', 'fechaDeImposicion', 'fechaDeRegistro',
   'montoBruto'];
   
