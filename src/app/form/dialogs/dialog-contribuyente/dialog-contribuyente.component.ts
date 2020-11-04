@@ -1,15 +1,9 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import {merge, of as observableOf} from 'rxjs';
-import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import { Contribuyente } from 'src/app/entity/contribuyente/contribuyente';
 import { Empresa } from 'src/app/entity/empresa/empresa';
 import { Persona } from 'src/app/entity/persona/persona';
 import { Vehiculo } from 'src/app/entity/vehiculo/vehiculo';
-import { ContribuyenteService } from 'src/app/services/contribuyentesService/contribuyente.service';
-import { ContribuyenteComponent } from '../../contribuyente/contribuyente.component';
 
 @Component({
   selector: 'app-dialog-contribuyente',

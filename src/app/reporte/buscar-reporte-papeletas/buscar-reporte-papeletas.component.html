@@ -1,0 +1,88 @@
+<div class="card mx-auto p-3 mat-elevation-z8">
+    <div class="text-align-center text-center">
+        <h1>Busqueda por ...</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 m-auto">
+            <mat-form-field class="col-lg-12" appearance="outline">
+                <mat-label>Opcion de Fecha Busqueda</mat-label>
+                <mat-select [(ngModel)]="opcionFecha" (ngModelChange)="cambioDeOpcion($event)"> 
+                    <mat-option value="0">Por Dia</mat-option>
+                    <mat-option value="1">Por Mes</mat-option>
+                    <mat-option value="2">Por Año</mat-option> 
+                    <mat-option value="3">Cualquier Fecha</mat-option> 
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-lg-3 m-auto" *ngIf="opcionFecha!='3'">
+            <mat-form-field class="col-lg-12" appearance="outline">
+                <mat-label>Condicion de Fecha</mat-label>
+                <mat-select [(ngModel)]="condicionFecha"> 
+                    <mat-option value="equal">Fecha igual a</mat-option>
+                    <mat-option value="less">Fechas anteriores a</mat-option>
+                    <mat-option value="greater">Fechas posteriores a</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-lg-3 m-auto" *ngIf="opcionFecha=='0'">
+            <mat-form-field class="col-lg-12" appearance="outline">
+                <mat-label class="col-form-label">Fecha De Registro</mat-label>
+                <input type="date" matInput 
+                  [(ngModel)]="fechaRegistro" > 
+            </mat-form-field>
+        </div>
+        <div class="col-lg-2 m-auto" *ngIf="opcionFecha=='1'"> 
+            <mat-form-field class="col-lg-12" appearance="outline">
+                <mat-label class="col-form-label ">Mes</mat-label>
+                <mat-select [(ngModel)]="mes"> 
+                    <mat-option value="1">1</mat-option>
+                    <mat-option value="2">2</mat-option>
+                    <mat-option value="3">3</mat-option>
+                    <mat-option value="4">4</mat-option>
+                    <mat-option value="5">5</mat-option>
+                    <mat-option value="6">6</mat-option>
+                    <mat-option value="7">7</mat-option>
+                    <mat-option value="8">8</mat-option>
+                    <mat-option value="9">9</mat-option>
+                    <mat-option value="10">10</mat-option>
+                    <mat-option value="11">11</mat-option>
+                    <mat-option value="12">12</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-lg-2 m-auto" *ngIf="(opcionFecha=='1' || opcionFecha=='2')">
+            <mat-form-field class="col-lg-12" appearance="outline">
+                <mat-label for="agente" class="col-form-label ">Año</mat-label>
+                <input matInput type="number" min="1990" [max]="year" name="agente" [(ngModel)]="anio">
+            </mat-form-field>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-lg-3 m-auto">
+            <mat-radio-group [(ngModel)]="dniOruc">
+                <mat-radio-button value="1">DNI</mat-radio-button>
+                <mat-radio-button value="2">RUC</mat-radio-button>
+              </mat-radio-group>
+            <mat-form-field class="col-lg-12" appearance="outline">
+                <mat-label for="agente" class="col-form-label ">DNI o RUC de Contribuyente</mat-label>
+                <input matInput type="text" name="agente" [(ngModel)]="docContribuyente">
+            </mat-form-field>
+        </div> 
+        <div class="col-lg-3 m-auto">
+            <mat-form-field class="col-lg-12" appearance="outline">
+                <mat-label for="agente" class="col-form-label ">Placa de Vehiculo</mat-label>
+                <input matInput type="text" name="agente" [(ngModel)]="placaVehiculo">
+            </mat-form-field>
+        </div>
+    </div>
+    <hr>
+    <div class="row"> 
+        <div class="pt-1 m-auto">
+            <button mat-raised-button color="primary" (click)="limpiarBusqueda()">Limpiar</button>
+        </div>
+        <div class="pt-1 m-auto">
+            <button mat-raised-button color="primary" (click)="Buscar()">Hacer Reporte</button>
+        </div>
+    </div> 
+</div>

@@ -1,9 +1,13 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" style="position: fixed; z-index: 100;">
     <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item [routerLink]="['/papeletas']">
+      <button mat-menu-item [routerLink]="['/papeletas/reporte']">
+        <mat-icon>dialpad</mat-icon>
+        <span>Reporte de Papeletas</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/form/papeletas']">
         <mat-icon>dialpad</mat-icon>
         <span>Nueva Papeleta</span>
       </button>

@@ -1,0 +1,39 @@
+<mat-toolbar color="primary" style="padding-top: 120px;-webkit-box-shadow: inset 0px 32px 41px 0px rgba(0,0,0,0.23);
+-moz-box-shadow: inset 0px 32px 41px 0px rgba(0,0,0,0.23);
+box-shadow: inset 0px 32px 41px 0px rgba(0,0,0,0.23);">
+  <span style="margin-top: -55px; padding-left: 43%;">Reporte de Papeletas</span>
+</mat-toolbar>
+<div class="container">
+  <div class="mt-4 mb-4">
+    <div class="card text-center mat-elevation-z8"> 
+      <div class="card-body">
+        <h4 class="card-title">Fecha y Hora Actual</h4>
+        <p class="card-text">{{hoy}}</p>
+      </div>
+    </div>
+  </div>
+    <div class="mt-4 mb-4">
+        <app-buscar-reporte-papeletas (propagar)="Buscar($event)" ></app-buscar-reporte-papeletas>
+    </div>
+    <div class="mt-4 mb-4">
+        <app-cards-calculos
+        [dni]="dni"
+        [ruc]="ruc"
+        [placaVehiculo]="placaVehiculo"
+        [condicionFecha]="condicionFecha"
+        [fechaABuscar]="fechaABuscar"
+        [equal]="equal"
+        ></app-cards-calculos>
+    </div>
+    <div class="mt-4 mb-4">
+        <app-tabla-papeleta
+        [dni]="dni"
+        [ruc]="ruc"
+        [placaVehiculo]="placaVehiculo"
+        [condicionFecha]="condicionFecha"
+        [fechaABuscar]="fechaABuscar"
+        [equal]="equal"
+        ></app-tabla-papeleta>
+    </div>
+</div>
+

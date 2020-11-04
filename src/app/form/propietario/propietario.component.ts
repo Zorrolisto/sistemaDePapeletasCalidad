@@ -9,7 +9,8 @@ import { DialogContribuyenteComponent } from '../dialogs/dialog-contribuyente/di
   styleUrls: ['./propietario.component.css']
 })
 export class PropietarioComponent implements OnInit {
-
+  @Input() propietario123:boolean;
+  @Input() form:boolean;
   @Input() propietario:Contribuyente;
   @Output() propagar = new EventEmitter<any>();
 

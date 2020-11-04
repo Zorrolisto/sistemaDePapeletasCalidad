@@ -1,28 +1,27 @@
 <mat-toolbar color="primary" style="padding-top: 120px;-webkit-box-shadow: inset 0px 32px 41px 0px rgba(0,0,0,0.23);
 -moz-box-shadow: inset 0px 32px 41px 0px rgba(0,0,0,0.23);
 box-shadow: inset 0px 32px 41px 0px rgba(0,0,0,0.23);">
-  <span style="margin-top: -55px; padding-left: 43%;">Registro de Papeletas</span>
+  <span style="margin-top: -55px; padding-left: 42%;">Confirmacion de Papeleta</span>
 </mat-toolbar>
 <div class="container">
     <div class="mt-4" *ngIf="papeleta">
         <!--Informacion exta-->
-        <app-informacion [papeleta]="papeleta"></app-informacion>
+        <app-informacion-confirmacion [papeleta]="papeleta"></app-informacion-confirmacion>
         <!--Termina informacion exta-->
     </div>
     <div class="mt-4" >
         <!--Escoger Infractor-->
-        <app-contribuyente 
-            (propagar)="syncInfractor($event)" 
-            (propagar2)="syncLicencia($event)" 
-            [infractor]="papeleta.infractor" 
-            [licencia]="papeleta.licencia">
-        </app-contribuyente>
+        <app-propietario
+            [form]="form"  
+            (propagar)="syncPropietario($event)" 
+            [propietario]="papeleta.infractor">
+        </app-propietario>
         <!--Termina escoger Infractor-->
     </div>
     <div class="mt-4" >
         <!--Escoger Propietario-->
-        <app-propietario 
-            [form]="form" 
+        <app-propietario
+            [form]="form"  
             [propietario123]="propietario123"
             (propagar)="syncPropietario($event)" 
             [propietario]="papeleta.propietario">
@@ -38,7 +37,7 @@ box-shadow: inset 0px 32px 41px 0px rgba(0,0,0,0.23);">
         </app-vehiculo>
         <!--Termina escoger Vehiculo-->
     </div>
-    <div class="mt-4" >
+    <div class="mt-4 mb-4" >
         <!--Escoger Infraccion-->
         <app-infraccion 
             [form]="form" 
@@ -46,17 +45,5 @@ box-shadow: inset 0px 32px 41px 0px rgba(0,0,0,0.23);">
             [infraccion]="papeleta.infraccion">
         </app-infraccion>
         <!--Termina escoger Infraccion-->
-    </div>
-</div>
-
-<div class="container"> 
-    <div class="mt-4 mb-4">
-        <div class="card">
-            <!--Enviar-->
-            <button mat-raised-button color="primary" class="mb-3 m-auto" style="height: 50%; width: 50%;" type="button" (click)="save()">
-                <a >Guardar</a>
-            </button>
-            <!--Termina Enviar-->
-        </div>
     </div>
 </div>

@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="card col-lg-2 m-auto mat-elevation-z8"> 
+      <div class="card-body">
+        <h4 class="card-title">Total Multas</h4>
+        <mat-progress-bar *ngIf="!resultadosDeCalculos['totalMultas']" mode="buffer"></mat-progress-bar>
+        <p class="card-text" *ngIf="resultadosDeCalculos['totalMultas']">
+            {{resultadosDeCalculos['totalMultas']}}
+        </p>
+      </div>
+    </div> 
+    <div class="card col-lg-2 m-auto mat-elevation-z8"> 
+      <div class="card-body">
+        <h4 class="card-title">Total Descuentos</h4>
+        <mat-progress-bar *ngIf="!resultadosDeCalculos['totalDescuentos']" mode="buffer"></mat-progress-bar>
+        <p class="card-text" *ngIf="resultadosDeCalculos['totalDescuentos']">
+            {{resultadosDeCalculos['totalDescuentos']}}
+        </p>
+      </div>
+    </div> 
+    <div class="card col-lg-2 m-auto mat-elevation-z8"> 
+      <div class="card-body">
+        <h4 class="card-title">Total Pagadas</h4>
+        <mat-progress-bar *ngIf="!resultadosDeCalculos['multasPagadas']" mode="buffer"></mat-progress-bar>
+        <p class="card-text" *ngIf="resultadosDeCalculos['multasPagadas']">
+            {{resultadosDeCalculos['multasPagadas']}}
+        </p>
+      </div>
+    </div> 
+    <div class="card col-lg-2 m-auto mat-elevation-z8"> 
+      <div class="card-body">
+        <h4 class="card-title">Total no Pagadas</h4>
+        <mat-progress-bar *ngIf="!resultadosDeCalculos['multasNoPagadas']" mode="buffer"></mat-progress-bar>
+        <p class="card-text" *ngIf="resultadosDeCalculos['multasNoPagadas']">
+            {{resultadosDeCalculos['multasNoPagadas']}}
+        </p>
+      </div>
+    </div> 
+</div>
+<div class="row pt-3 pb-3">
+    <div class="card col-lg-2 m-auto mat-elevation-z8"> 
+      <div class="card-body">
+        <h4 class="card-title">Monto Total</h4>
+        <mat-progress-bar *ngIf="!resultadosDeCalculos['montoTotal']" mode="buffer"></mat-progress-bar>
+        <p class="card-text" *ngIf="resultadosDeCalculos['montoTotal']">
+            {{resultadosDeCalculos['montoTotal']}}
+        </p>
+      </div>
+    </div> 
+    <div class="card col-lg-2 m-auto mat-elevation-z8"> 
+      <div class="card-body">
+        <h4 class="card-title">Total Moras</h4>
+        <mat-progress-bar *ngIf="!resultadosDeCalculos['totalMoras']" mode="buffer"></mat-progress-bar>
+        <p class="card-text" *ngIf="resultadosDeCalculos['totalMoras']">
+            {{resultadosDeCalculos['totalMoras']}}
+        </p>
+      </div>
+    </div> 
+    <div class="card col-lg-2 m-auto mat-elevation-z8"> 
+      <div class="card-body">
+        <h4 class="card-title">Monto pagado</h4>
+        <mat-progress-bar *ngIf="!resultadosDeCalculos['totalPagos']" mode="buffer"></mat-progress-bar>
+        <p class="card-text" *ngIf="resultadosDeCalculos['totalPagos']">
+            {{resultadosDeCalculos['totalPagos']}}
+        </p>
+      </div>
+    </div> 
+    <div class="card col-lg-2 m-auto mat-elevation-z8"> 
+      <div class="card-body">
+            <h4 class="card-title">Monto sin pagar</h4>
+            <mat-progress-bar *ngIf="!resultadosDeCalculos['totalNoPagos']" mode="buffer"></mat-progress-bar>
+            <p class="card-text" *ngIf="resultadosDeCalculos['totalNoPagos']">
+                {{resultadosDeCalculos['totalNoPagos']}}
+            </p>
+      </div>
+    </div> 
+</div> 
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div id="container"></div>            
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div id="container2"></div>
+        </div>
+    </div>
+</div>

@@ -1,11 +1,14 @@
 
 <div class="card mx-auto p-3 mat-elevation-z8">
-    <div class="text-align-center text-center">
+    <div *ngIf="propietario123" class="text-align-center text-center">
         <h1>Propietario </h1><span></span>
+    </div>
+    <div *ngIf="!propietario123" class="text-align-center text-center">
+        <h1>Infractor </h1><span></span>
     </div>
     
     <!--Abrir Dialog-->
-    <div class="">
+    <div class="" *ngIf="form">
         <button mat-raised-button (click)="openDialogPropietario()" color="primary" style="float: left;" type="button">
             <a>Escoger Contribuyente</a>
         </button>

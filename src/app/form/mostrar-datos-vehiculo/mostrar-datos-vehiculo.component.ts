@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Vehiculo } from '../entity/vehiculo/vehiculo';
+import { Component, Input, OnInit } from '@angular/core'; 
+import { Vehiculo } from 'src/app/entity/vehiculo/vehiculo';
 
 @Component({
   selector: 'app-mostrar-datos-vehiculo',

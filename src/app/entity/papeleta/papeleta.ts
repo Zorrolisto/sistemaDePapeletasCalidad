@@ -6,7 +6,7 @@ import { Vehiculo } from '../vehiculo/vehiculo';
 export class Papeleta {
     id:number;
     fechaImposicion:Date;
-    fecha:Date;
+    fechaRegistro:Date;
     hora:String;
     lugar:String;
     observacion:String;

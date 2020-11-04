@@ -1,0 +1,35 @@
+<div class="card mat-elevation-z8">
+    <div class="card-body">
+        <div class="text-align-center text-center">
+            <h1>Informacion</h1>
+        </div>
+        <div *ngIf="papeleta!=null" class="row">
+            <div class="col-lg-2  ml-4">
+                <h3><strong>ID:</strong> {{papeleta.id}}</h3>
+            </div>
+            <div class="col-lg-3  m-auto">
+                <h3><strong>Fecha de Imposicion:</strong> {{papeleta.fechaImposicion}}</h3>
+            </div>
+            <div class="col-lg-3  m-auto">
+                <h3><strong>Hora de Imposicion:</strong> {{papeleta.hora}}</h3>
+            </div>
+            <div class="col-lg-3  m-auto">
+                <h3><strong>Fecha de Registro:</strong> {{papeleta.fechaRegistro}}</h3>
+            </div>
+        </div>
+        <div *ngIf="papeleta!=null" class="row">
+            <div class="col-lg-3  m-auto">
+                <h3><strong>Monto UIT:</strong> S/{{papeleta.tasa.montoUIT}}</h3>
+            </div>
+            <div class="col-lg-3  m-auto">
+                <h3><strong>Monto Normal:</strong> {{papeleta.infraccion.porcentaje_uit}}%</h3>
+            </div>
+            <div class="col-lg-3  m-auto">
+                <h3><strong>Monto Bruto:</strong> S/{{papeleta.montoBruto}}</h3>
+            </div>
+            <div class="col-lg-3  m-auto">
+                <h3><strong>Situacion:</strong> {{papeleta.situacion}}</h3>
+            </div>
+        </div>
+    </div>
+</div>

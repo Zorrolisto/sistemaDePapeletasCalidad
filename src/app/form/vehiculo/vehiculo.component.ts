@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Vehiculo } from '../entity/vehiculo/vehiculo';
-import { DialogVehiculoComponent } from '../form/dialogs/dialog-vehiculo/dialog-vehiculo.component';
+import { Vehiculo } from 'src/app/entity/vehiculo/vehiculo';
+import { DialogVehiculoComponent } from '../dialogs/dialog-vehiculo/dialog-vehiculo.component';
 
 @Component({
   selector: 'app-vehiculo',
@@ -9,6 +9,7 @@ import { DialogVehiculoComponent } from '../form/dialogs/dialog-vehiculo/dialog-
   styleUrls: ['./vehiculo.component.css']
 })
 export class VehiculoComponent implements OnInit {
+  @Input() form:boolean;
   @Input() vehiculo:Vehiculo;
   @Output() propagar = new EventEmitter<any>();
   

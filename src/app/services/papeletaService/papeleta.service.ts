@@ -38,4 +38,30 @@ export class PapeletaService {
     return this.http.get<number>(`${this.url}/count/papeletas`);
   }
 
+  //REPORTE PAPELETAS TABLA
+  reportPapeletasTable(dni:String, ruc:String, vehiculo:String, fechaDePapeleta:String,
+    fechaDePapeletaCondicion:String, equal:String, size: number, page: number): Observable<Papeleta[]>{
+      let buscar=''; 
+      buscar = dni ? buscar + '&dni='+dni.toString() : buscar + '';
+      buscar = ruc ? buscar + '&ruc='+ruc.toString() : buscar + '';
+      buscar = vehiculo ? buscar+'&vehiculo='+vehiculo : buscar + '';
+      buscar = fechaDePapeleta ? buscar+'&fechaDePapeleta='+fechaDePapeleta : buscar + '';
+      buscar = fechaDePapeletaCondicion ? buscar+'&fechaDePapeletaCondicion='+fechaDePapeletaCondicion : buscar + '';
+      buscar = equal ? buscar+'&equal='+equal : buscar + '';
+      console.log(buscar);
+      return this.http.get<Papeleta[]>(`${this.url}/reporte/table?size=${size}&page=${page+1}${buscar}`);
+  }
+  //REPORTE PAPELETAS CALC
+  reportPapeletasCalculos(dni:String, ruc:String, vehiculo:String, fechaDePapeleta:String,
+    fechaDePapeletaCondicion:String, equal:String): Observable<Map<string, number>>{
+      let buscar=''; 
+      buscar = dni ? buscar + '&dni='+dni.toString() : buscar + '';
+      buscar = ruc ? buscar + '&ruc='+ruc.toString() : buscar + '';
+      buscar = vehiculo ? buscar+'&vehiculo='+vehiculo : buscar + '';
+      buscar = fechaDePapeleta ? buscar+'&fechaDePapeleta='+fechaDePapeleta : buscar + '';
+      buscar = fechaDePapeletaCondicion ? buscar+'&fechaDePapeletaCondicion='+fechaDePapeletaCondicion : buscar + '';
+      buscar = equal ? buscar+'&equal='+equal : buscar + '';
+      console.log(buscar);
+    return this.http.get<Map<string, number>>(`${this.url}/reporte/calculos?none=none${buscar}`);
+  }
 }

@@ -10,6 +10,7 @@ import { DialogInfraccionComponent } from '../dialogs/dialog-infraccion/dialog-i
 })
 export class InfraccionComponent implements OnInit {
   @Input() infraccion:Infraccion;
+  @Input() form:boolean;
   @Output() propagar = new EventEmitter<any>();
   
   

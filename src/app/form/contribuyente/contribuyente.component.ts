@@ -1,6 +1,5 @@
 import { EventEmitter, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Contribuyente } from 'src/app/entity/contribuyente/contribuyente';
 import { DialogContribuyenteComponent } from '../dialogs/dialog-contribuyente/dialog-contribuyente.component';
