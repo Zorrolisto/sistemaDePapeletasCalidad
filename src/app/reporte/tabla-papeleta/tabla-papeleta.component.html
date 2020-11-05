@@ -73,6 +73,14 @@
                 <td mat-cell *matCellDef="let papeleta">{{papeleta.montoBruto}}</td>
             </ng-container> 
 
+            <!-- lugar Column-->
+            <ng-container matColumnDef="verificar">
+                <th mat-header-cell *matHeaderCellDef> Verificar </th>
+                <td mat-cell *matCellDef="let papeleta">
+                    <a [routerLink]="['/papeletas/confirmacion/'+ papeleta.id]" class="btn"><mat-icon >check</mat-icon></a>
+                </td>
+            </ng-container> 
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>

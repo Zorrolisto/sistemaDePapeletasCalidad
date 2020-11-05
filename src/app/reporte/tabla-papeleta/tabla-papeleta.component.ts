@@ -13,7 +13,7 @@ import { PapeletaService } from 'src/app/services/papeletaService/papeleta.servi
 export class TablaPapeletaComponent implements  AfterViewInit, OnInit, OnChanges {
   displayedColumns: string[] = ['id', 'docInfractor','docPropietario',
   'placa', 'codigoInfraccion', 'fechaDeImposicion', 'fechaDeRegistro',
-  'montoBruto'];
+  'montoBruto', 'verificar'];
   
   @Input() dni:String;
   @Input() ruc:String;
